@@ -1,0 +1,2 @@
+lab-openssh-server_1:9.2p1-2+deb12u7_amd64.deb - это пересобранный пакет openssh-server_1:9.2p1-2+deb12u7_amd64.deb для Debian 12.
+Добавлен конфигурационный файл sshd_config в etc/ssh/, после чего были заново посчитаны контрольные суммы.
