@@ -1,0 +1,56 @@
+ dpkg-buildpackage -us -uc -ui -b
+dpkg-buildpackage: инфо: пакет исходного кода easy-rsa-lab
+dpkg-buildpackage: инфо: версия исходного кода 0.1-1
+dpkg-buildpackage: инфо: дистрибутив исходного кода UNRELEASED
+dpkg-buildpackage: инфо: исходный код изменён Mikhail Potemkin <potemkinmr@gmail.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: инфо: архитектура узла amd64
+ debian/rules clean
+dh clean
+   dh_clean
+ debian/rules binary
+dh binary
+   dh_update_autotools_config
+   dh_autoreconf
+   create-stamp debian/debhelper-build-stamp
+   dh_prep
+   dh_auto_install --destdir=debian/easy-rsa-lab/
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_installdeb
+   dh_gencontrol
+dpkg-gencontrol: предупреждение: пакет easy-rsa-lab: substitution variable ${perl:Depends} unused, but is defined
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: сборка пакета «easy-rsa-lab» в «../easy-rsa-lab_0.1-1_all.deb».
+ dpkg-genbuildinfo --build=binary -O../easy-rsa-lab_0.1-1_amd64.buildinfo
+ dpkg-genchanges --build=binary -O../easy-rsa-lab_0.1-1_amd64.changes
+dpkg-genchanges: инфо: закачка только двоичных пакетов (без пакетов исходного кода)
+ dpkg-source --after-build .
+dpkg-buildpackage: инфо: закачка только двоичных пакетов (без пакетов исходного кода)
+Now running lintian easy-rsa-lab_0.1-1_amd64.changes ...
+E: easy-rsa-lab: changelog-is-dh_make-template [usr/share/doc/easy-rsa-lab/changelog.Debian.gz:1]
+E: easy-rsa-lab: copyright-contains-dh_make-todo-boilerplate
+E: easy-rsa-lab: helper-templates-in-copyright
+W: easy-rsa-lab: copyright-has-url-from-dh_make-boilerplate
+W: easy-rsa-lab: executable-not-elf-or-script [usr/share/easy-rsa/distro/windows/win32/libcrypto-3.dll]
+W: easy-rsa-lab: executable-not-elf-or-script [usr/share/easy-rsa/distro/windows/win32/libssl-3.dll]
+W: easy-rsa-lab: executable-not-elf-or-script [usr/share/easy-rsa/distro/windows/win64/libcrypto-3-x64.dll]
+W: easy-rsa-lab: executable-not-elf-or-script [usr/share/easy-rsa/distro/windows/win64/libssl-3-x64.dll]
+W: easy-rsa-lab: extended-description-line-too-long line 1
+W: easy-rsa-lab: initial-upload-closes-no-bugs [usr/share/doc/easy-rsa-lab/changelog.Debian.gz:1]
+W: easy-rsa-lab: package-contains-vcs-control-dir [usr/share/easy-rsa/.git/]
+W: easy-rsa-lab: package-contains-vcs-control-file [usr/share/easy-rsa/.gitignore]
+W: easy-rsa-lab: script-not-executable [usr/share/easy-rsa/distro/windows/bin/easyrsa-shell-init.sh]
+W: easy-rsa-lab: script-not-executable [usr/share/easy-rsa/op-test.sh]
+W: easy-rsa-lab: script-not-executable [usr/share/easy-rsa/wop-test.sh]
+W: easy-rsa-lab: unknown-section lab
+W: easy-rsa-lab: wrong-bug-number-in-closes #nnnn [usr/share/doc/easy-rsa-lab/changelog.Debian.gz:3]
+Finished running lintian.

@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Thu, 18 Sep 2025 23:15:36 +0300
+Source: easy-rsa-lab
+Binary: easy-rsa-lab
+Architecture: all
+Version: 0.1-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Mikhail Potemkin <potemkinmr@gmail.com>
+Changed-By: Mikhail Potemkin <potemkinmr@gmail.com>
+Description:
+ easy-rsa-lab - Simple shell based CA utility
+Changes:
+ easy-rsa-lab (0.1-1) UNRELEASED; urgency=medium
+ .
+   * Initial release. (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1:
+ bd8718bd3b72ef0b3a4703b665087f845c8f3fdf 69861896 easy-rsa-lab_0.1-1_all.deb
+ 54822c225e67495c0c0136b4d901c691d072ed94 4477 easy-rsa-lab_0.1-1_amd64.buildinfo
+Checksums-Sha256:
+ ced80592da10e3e2e4f77c30c3315525501231e03867016c80793a2095d452e3 69861896 easy-rsa-lab_0.1-1_all.deb
+ 6591f9c15858e4493260090e93c45441781dd765e3f98a34cc1ea4782df460a4 4477 easy-rsa-lab_0.1-1_amd64.buildinfo
+Files:
+ b2c924f6eb0ce9c3225b5e8730b6a1a7 69861896 lab optional easy-rsa-lab_0.1-1_all.deb
+ f675a5565f9c8cc9d51395eb8963a2dd 4477 lab optional easy-rsa-lab_0.1-1_amd64.buildinfo
